@@ -2,15 +2,18 @@ package br.com.yaman.math;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import br.com.yaman.SimpleMath;
 
-
+@DisplayName("Test Math Operations in SimpleMath Class")
 class SimpleMathTest {
-
+	
+	//test[System Under Test]_[Condition or State Change]_[Expected Result]
 	@Test
-	void testSum() {
+	@DisplayName("Test 6.2 + 2 = 8.2")
+	void testSum_When_SixDotTwoIsAddedByTwo_ShouldReturnEightDotTwo() {
 
 		SimpleMath math = new SimpleMath();
 		double firstNumber = 6.2D;
@@ -27,6 +30,7 @@ class SimpleMathTest {
 	}
 	
 	@Test
+	@DisplayName("Test 5 - 5 = 0")
 	void testSubtraction() {
 		
 		SimpleMath math = new SimpleMath();
@@ -41,6 +45,7 @@ class SimpleMathTest {
 	}
 	
 	@Test
+	@DisplayName("Test 5 x 5 = 25")
 	void testMultiplication() {
 		
 		SimpleMath math = new SimpleMath();
@@ -55,6 +60,7 @@ class SimpleMathTest {
 	}
 	
 	@Test
+	@DisplayName("Test 5 / 5 = 1")
 	void testDivision() {
 		
 		SimpleMath math = new SimpleMath();
@@ -70,6 +76,7 @@ class SimpleMathTest {
 	}
 	
 	@Test
+	@DisplayName("Test 5 AVG 5 = 5")
 	// Mean AVG
 	void testMean() {
 		
@@ -86,6 +93,7 @@ class SimpleMathTest {
 	}
 	
 	@Test
+	@DisplayName("Test RAIZ 9 = 3")
 	void testSquareRoot() {
 		
 		SimpleMath math = new SimpleMath();
@@ -97,5 +105,12 @@ class SimpleMathTest {
 		double expected = 3;
 		assertEquals(expected, result, () -> firstNumber + 
 				"The testSquareRoot() did not produce" + expected + "result!");
+	}
+	
+	@Test
+	@DisplayName("Test X / 0 = FAIL")
+	void testDivision_When_FirstNumberIsDividedByZero_ShouldThrowArithmeticException() {
+		fail();
+		
 	}
 }
