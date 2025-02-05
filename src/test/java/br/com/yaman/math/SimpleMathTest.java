@@ -2,6 +2,7 @@ package br.com.yaman.math;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -112,10 +113,21 @@ class SimpleMathTest {
 				"The testSquareRoot() did not produce" + expected + "result!");
 	}
 	
+	@Disabled ("Código não implementado. Desabilitado.")
 	@Test
 	@DisplayName("Test X / 0 = FAIL")
 	void testDivision_When_FirstNumberIsDividedByZero_ShouldThrowArithmeticException() {
 		fail();
 		
 	}
+	// test[System Under Test]_[Condition or State Change]_[Expected Result]
+	@DisplayName("Display Name")
+	@Test
+	void testABCD_When_XYZ_Should() {
+		//Given / Arrange
+		//When /Act
+		//Then /Assert
+		// Window > Preferences > JAVA > Editor > Templates > New
+	}
+
 }
