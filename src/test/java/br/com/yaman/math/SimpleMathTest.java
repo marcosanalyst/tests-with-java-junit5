@@ -15,10 +15,16 @@ class SimpleMathTest {
 		float x = 7f;
 		double y = 6.2d;
 		SimpleMath math = new SimpleMath();
-		Double actual = math.sum(6.2D, 3.8D);
+		double firstNumber = 6.2D;
+		double secondNumber = 2D;
+		
+		Double actual = math.sum(firstNumber, secondNumber);
 	
-		double expected = 10D;
-		assertEquals(expected, actual, "Impresso caso ocorra algume erro. The testSum() did not produce expected result");
+		double expected = 8.2D;
+		assertEquals(expected, actual, 
+		() -> firstNumber + "+" + secondNumber + 
+		"The testSum() did not produce" + expected + "result!");
+
 		
 		
 		
