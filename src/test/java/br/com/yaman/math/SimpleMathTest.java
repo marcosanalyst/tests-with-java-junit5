@@ -1,5 +1,6 @@
 package br.com.yaman.math;
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
@@ -142,11 +143,25 @@ class SimpleMathTest {
 				"The testSquareRoot() did not produce" + expected + "result!");
 	}
 	
-	@Disabled ("Código não implementado. Desabilitado.")
 	@Test
 	@DisplayName("Test X / 0 = FAIL")
 	void testDivision_When_FirstNumberIsDividedByZero_ShouldThrowArithmeticException() {
-		fail();
+		
+		System.out.println("Teste divisão por zero!");
+		//given
+		double firstNumber = 6.2;
+		double secondNumber = 0D;
+		
+		var expectedMessage = "Impossível dividir por zero!";
+		
+		//when & then
+		ArithmeticException actual = assertThrows(ArithmeticException.class, () -> { 
+			//when & then
+			math.division(firstNumber, secondNumber);
+			}, () -> "Division by zero should thrrow an ArithmeticException" );
+		
+		assertEquals(expectedMessage, actual.getMessage(),
+				() -> "Unexpected excepction message");
 		
 	}
 	// test[System Under Test]_[Condition or State Change]_[Expected Result]
